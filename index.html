@@ -15,19 +15,12 @@
 
     <style>
       :root {
-        /* Primary Text */
         --Very-dark-desaturated-blue: hsl(238, 29%, 16%);
         --Soft-red: hsl(14, 88%, 65%);
-
-        /* Background gradient */
         --Soft-violet: hsl(273, 75%, 66%);
         --Soft-blue: hsl(240, 73%, 65%);
-
-        /* Text */
         --Very-dark-grayish-blue: hsl(237, 12%, 33%);
         --Dark-grayish-blue: hsl(240, 6%, 50%);
-
-        /* Dividers */
         --Light-grayish-blue: hsl(240, 5%, 91%);
       }
       body {
@@ -47,7 +40,7 @@
       img {
         max-width: 100%;
       }
-      main {
+      .main-container {
         width: 295px;
         background-color: #fff;
         padding: 1.6rem;
@@ -57,14 +50,13 @@
       }
       @media (min-width: 1440px) {
         main {
-          /* background-color: red; */
+          position: relative;
+        }
+        .main-container {
           width: 900px;
           display: grid;
           align-items: center;
           grid-template-columns: 1fr 1fr;
-
-          /* position: relative; */
-
           overflow: hidden;
         }
       }
@@ -72,12 +64,6 @@
       .img-container {
         position: relative;
         text-align: center;
-      }
-      @media (min-width: 1440px) {
-        .img-container {
-          /* position: relative; */
-          z-index: 1;
-        }
       }
 
       .img-container .illustration-woman,
@@ -88,7 +74,6 @@
       .img-container .illustration-woman {
         position: absolute;
         transform: translateY(-145px);
-        z-index: 1;
       }
       @media (min-width: 1440px) {
         .img-container .illustration-woman {
@@ -106,17 +91,15 @@
         }
       }
 
-      .img-container .illustration-box {
+      main .illustration-box {
         display: none;
       }
       @media (min-width: 1440px) {
-        .img-container .illustration-box {
+        main .illustration-box {
           display: block;
           position: absolute;
-
-          transform: translate(-119px, -260px);
+          transform: translate(-83px, 225px);
           z-index: 2;
-          overflow: auto;
         }
       }
 
@@ -189,97 +172,98 @@
   </head>
   <body>
     <main>
-      <div class="img-container">
-        <picture>
-          <source
-            media="(min-width: 1440px)"
-            class="illustration-woman"
-            srcset="images/illustration-woman-online-desktop.svg"
-          />
+      <img
+        class="illustration-box"
+        src="images/illustration-box-desktop.svg"
+        alt=""
+      />
+      <div class="main-container">
+        <div class="img-container">
+          <picture>
+            <source
+              media="(min-width: 1440px)"
+              class="illustration-woman"
+              srcset="images/illustration-woman-online-desktop.svg"
+            />
 
-          <img
-            class="illustration-woman"
-            src="images/illustration-woman-online-mobile.svg"
-            alt=""
-          />
-        </picture>
+            <img
+              class="illustration-woman"
+              src="images/illustration-woman-online-mobile.svg"
+              alt=""
+            />
+          </picture>
 
-        <picture>
-          <source
-            media="(min-width: 1440px)"
-            class="bg-pattern"
-            srcset="images/bg-pattern-desktop.svg"
-          />
+          <picture>
+            <source
+              media="(min-width: 1440px)"
+              class="bg-pattern"
+              srcset="images/bg-pattern-desktop.svg"
+            />
 
-          <img class="bg-pattern" src="images/bg-pattern-mobile.svg" alt="" />
-        </picture>
-
-        <img
-          class="illustration-box"
-          src="images/illustration-box-desktop.svg"
-          alt=""
-        />
-      </div>
-      <div class="container">
-        <h1>FAQ</h1>
-        <div class="question">
-          <div>
-            <h2>How many team members can I invite?</h2>
-            <img class="arrow-img" src="images/icon-arrow-down.svg" alt="" />
-          </div>
-          <div class="answer">
-            <p>
-              You can invite up to 2 additional users on the Free plan. There is
-              no limit on team members for the Premium plan.
-            </p>
-          </div>
+            <img class="bg-pattern" src="images/bg-pattern-mobile.svg" alt="" />
+          </picture>
         </div>
-        <div class="question">
-          <div>
-            <h2>What is the maximum file upload size?</h2>
-            <img class="arrow-img" src="images/icon-arrow-down.svg" alt="" />
+        <div class="container">
+          <h1>FAQ</h1>
+          <div class="question">
+            <div>
+              <h2>How many team members can I invite?</h2>
+              <img class="arrow-img" src="images/icon-arrow-down.svg" alt="" />
+            </div>
+            <div class="answer">
+              <p>
+                You can invite up to 2 additional users on the Free plan. There
+                is no limit on team members for the Premium plan.
+              </p>
+            </div>
           </div>
-          <div class="answer">
-            <p>
-              No more than 2GB. All files in your account must fit your allotted
-              storage space.
-            </p>
+          <div class="question">
+            <div>
+              <h2>What is the maximum file upload size?</h2>
+              <img class="arrow-img" src="images/icon-arrow-down.svg" alt="" />
+            </div>
+            <div class="answer">
+              <p>
+                No more than 2GB. All files in your account must fit your
+                allotted storage space.
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="question">
-          <div>
-            <h2>How do I reset my password?</h2>
-            <img class="arrow-img" src="images/icon-arrow-down.svg" alt="" />
+          <div class="question">
+            <div>
+              <h2>How do I reset my password?</h2>
+              <img class="arrow-img" src="images/icon-arrow-down.svg" alt="" />
+            </div>
+            <div class="answer">
+              <p>
+                Click “Forgot password” from the login page or “Change password”
+                from your profile page. A reset link will be emailed to you.
+              </p>
+            </div>
           </div>
-          <div class="answer">
-            <p>
-              Click “Forgot password” from the login page or “Change password”
-              from your profile page. A reset link will be emailed to you.
-            </p>
+          <div class="question">
+            <div>
+              <h2>Can I cancel my subscription?</h2>
+              <img class="arrow-img" src="images/icon-arrow-down.svg" alt="" />
+            </div>
+            <div class="answer">
+              <p>
+                Yes! Send us a message and we’ll process your request no
+                questions asked.
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="question">
-          <div>
-            <h2>Can I cancel my subscription?</h2>
-            <img class="arrow-img" src="images/icon-arrow-down.svg" alt="" />
-          </div>
-          <div class="answer">
-            <p>
-              Yes! Send us a message and we’ll process your request no questions
-              asked.
-            </p>
-          </div>
-        </div>
-        <div class="question">
-          <div>
-            <h2>Do you provide additional support?</h2>
-            <img class="arrow-img" src="images/icon-arrow-down.svg" alt="" />
-          </div>
-          <div class="answer">
-            <p>
-              Chat and email support is available 24/7. Phone lines are open
-              during normal business hours.
-            </p>
+          <div class="question">
+            <div>
+              <h2>Do you provide additional support?</h2>
+              <img class="arrow-img" src="images/icon-arrow-down.svg" alt="" />
+            </div>
+            <div class="answer">
+              <p>
+                Chat and email support is available 24/7. Phone lines are open
+                during normal business hours.
+              </p>
+            </div>
           </div>
         </div>
       </div>

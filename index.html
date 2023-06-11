@@ -49,106 +49,44 @@
         margin: 9rem 0.6rem;
         box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
       }
-      @media (min-width: 1440px) {
-        main {
-          width: 900px;
-          display: grid;
-          align-items: center;
-          grid-template-columns: 1fr 1fr;
-        }
-      }
-      .img-container {
-        /* position: relative; */
-        /* text-align: center; */
-      }
-      /* .img-container .illustration-woman,
-      .img-container .bg-pattern {
-        width: 90%;
-      }
-      .img-container .illustration-woman {
-        position: absolute;
-        transform: translateY(-145px);
-        z-index: 1;
-      }
-      @media (min-width: 1440px) {
-        .img-container .illustration-woman {
-          transform: translate(-80px, 30px);
-        }
-      }
-      .img-container .bg-pattern {
-        transform: translateY(-30px);
-        margin-bottom: -10px;
-      }
-      @media (min-width: 1440px) {
-        .img-container .bg-pattern {
-          width: 100%;
-          transform: translate(-120px, -30px);
-          z-index: -1;
-        }
-      } */
 
-      .inner {
+      .illustration {
         margin-bottom: -9rem;
       }
-      @media (min-width: 1440px) {
-        .inner {
-          margin-bottom: initial;
-        }
-      }
 
-      .inner img {
+      .illustration .illustration-woman-mobile {
         position: relative;
         transform: translateY(-163px);
+        z-index: 1;
       }
 
-      .inner .illustration-woman-desktop {
+      .illustration .illustration-woman-desktop {
         display: none;
       }
 
-      @media (min-width: 1440px) {
-        .inner {
-          overflow: hidden;
-          margin-left: -26px;
-        }
-        .inner .illustration-woman-mobile {
-          display: none;
-        }
-        .inner .illustration-woman-desktop {
-          display: block;
-          transform: translate(-72px, 0px);
-        }
+      .illustration .bg-pattern-mobile {
+        width: 100%;
+        transform: translateY(-263px);
+        margin-bottom: -6rem;
+      }
+      .illustration .bg-pattern-desktop {
+        display: none;
       }
 
       .illustration-box {
         display: none;
       }
-      @media (min-width: 1440px) {
-        .illustration-box {
-          position: absolute;
-          display: block;
-          transform: translate(-120px, -212px);
-        }
-      }
 
       .container {
         margin-bottom: 1.3rem;
       }
-      @media (min-width: 1440px) {
-        .container {
-          margin: 0 3rem;
-        }
-      }
-      h1 {
+
+      .container h1 {
         color: var(--Very-dark-desaturated-blue);
         font-size: 2rem;
         text-align: center;
       }
-      @media (min-width: 1440px) {
-        h1 {
-          margin-top: initial;
-          text-align: left;
-        }
-      }
+
       .question {
         cursor: pointer;
         border-bottom: 1px solid var(--Light-grayish-blue);
@@ -162,11 +100,7 @@
         font-weight: 400;
         transition: all 0.2s ease;
       }
-      @media (min-width: 1440px) {
-        .question div h2 {
-          font-size: 1rem;
-        }
-      }
+
       .question div h2:hover {
         color: var(--Soft-red);
       }
@@ -186,7 +120,7 @@
         transition: max-height 0.3s ease;
       }
       .question .answer.show {
-        max-height: 1000px;
+        max-height: 300px;
       }
       .question .answer p {
         max-width: 260px;
@@ -194,55 +128,86 @@
         line-height: 1.6;
         margin-top: 0;
       }
+
+      @media (min-width: 1440px) {
+        main {
+          width: 900px;
+          padding: 0 1.6rem;
+          display: grid;
+          align-items: center;
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .illustration {
+          background-image: url("images/bg-pattern-desktop.svg");
+          background-repeat: no-repeat;
+          background-position: right 76px bottom -200px;
+          margin-left: -26px;
+          margin-bottom: initial;
+          overflow: hidden;
+        }
+        .illustration .illustration-woman-mobile {
+          display: none;
+        }
+        .illustration .illustration-woman-desktop {
+          display: block;
+          margin: 2rem 0;
+          transform: translate(-69px, 0px);
+          z-index: 2;
+        }
+
+        .illustration .bg-pattern-mobile {
+          display: none;
+        }
+
+        .illustration-box {
+          position: absolute;
+          display: block;
+          transform: translate(-119px, -239px);
+          z-index: 3;
+        }
+
+        .container {
+          margin: 0 3rem;
+        }
+        .container h1 {
+          margin-top: initial;
+          text-align: left;
+        }
+
+        .question div h2 {
+          font-size: 1rem;
+        }
+      }
     </style>
   </head>
   <body>
     <main>
       <div class="img-container">
-        <div class="inner">
+        <div class="illustration">
           <img
             class="illustration-woman-mobile"
             src="images/illustration-woman-online-mobile.svg"
             alt=""
           />
           <img
+            class="bg-pattern-mobile"
+            src="images/bg-pattern-mobile.svg"
+            alt=""
+          />
+
+          <img
             class="illustration-woman-desktop"
             src="images/illustration-woman-online-desktop.svg"
             alt=""
           />
-
-          <!-- <picture>
-            <source
-              media="(min-width: 1440px)"
-              class="illustration-woman"
-              srcset="images/illustration-woman-online-desktop.svg"
-            />
-
-            <img
-              class="illustration-woman"
-              src="images/illustration-woman-online-mobile.svg"
-              alt=""
-            />
-          </picture> -->
-
-          <!-- <picture>
-            <source
-              media="(min-width: 1440px)"
-              class="bg-pattern"
-              srcset="images/bg-pattern-desktop.svg"
-            />
-
-            <img class="bg-pattern" src="images/bg-pattern-mobile.svg" alt="" />
-          </picture> -->
         </div>
 
-        <!-- <div class="illustration-box-container"> -->
         <img
           class="illustration-box"
           src="images/illustration-box-desktop.svg"
           alt=""
         />
-        <!-- </div> -->
       </div>
       <div class="container">
         <h1>FAQ</h1>
